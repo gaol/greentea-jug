@@ -42,7 +42,7 @@ image:arun.png[250,250]
 
 * &nbsp; &nbsp;
 
-* 张建峰
+* 张建锋
 ** WildFly 核心开发人员
 ** 微博: image:weibo.ico[] @寻找一个苹果
 
@@ -421,7 +421,8 @@ image:netbeans-logo.png[] image:jbosstools-logo.png[] image:intellij-logo.png[]
 [NOTE]
 [role="speaker"]
 ====
-* Undertow is a flexible performant web server written in java, providing both true blocking and non-blocking API’s based on NIO. It has the ability to scale to a million connections and has impressive numbers on throughput. It also allows us to add support for modern security standards. And since web server is one of the most critical pieces of an application server, writing it a fresh allows us to provide the best possible performance and memory efficiency.
+* 他是用　java　实现的一个轻量级，高性能，可扩展的　web　服务器，很轻易能提供１００万链接的能力。
+* web server 作为一个应用服务器里最重要的部分，我们重写可以获得更大程度上的性能提升，并减少内存的使用。
 * Undertow has a composition based architecture that allows you to build a web server by combining small single purpose handlers. The gives you the flexibility to choose between a full Java EE servlet 3.1 container, or a low level non-blocking handler, to anything in between.
 * Undertow is designed to be fully embeddable, with easy to use fluent builder APIs. Undertow’s lifecycle is completely controlled by the embedding application.
 * Undertow provides support for Servlet 3.1, including support for embedded servlet. It is also possible to mix both Servlets and native undertow non-blocking handlers in the same deployment. It allows to upgrade from HTTP to our native protocols.
@@ -547,10 +548,11 @@ NOTE: http://www.techempower.com/blog/2014/03/04/one-million-http-rps-without-lo
 [NOTE]
 [role="speaker"]
 ====
-* 不仅仅是　JavaEE　full　features
+* 发布　core　使得用户可以使用　wildfly　内核实现自己的运行时平台，　不局限在　JavaEE　领域
 ** 例如　TorqueBox 使用　WildFly　的内核实现了　Ruby-on-Railes 的平台
-* A new download option is now available in WildFly 8, called the "core" distribution. This distribution is ideal for framework authors that want to build their own application runtime using the powerful WildFly 8 architecture.
-* This allows to add new subsystems, add new deployment types, your application needs to take advantage of the powerful CLI for managementaspect, etc. This is nothing to do with an existing standard like Java EE or anything else, its purely related to how WildFly internals work.
+*　提供了一个架构，　支持添加新的　subsystem，　新的部署类型　etc
+** 提供了线程的管理 支持配置的持久化，　热机状态下的配置更新(还提供了一系列的管理工具和协议)
+** 部署管理，　但是你需要自己实现具体的部署 　management，　classloading，　logging　是最基础的设施
 * Management, classloading (JBoss Modules), logging etc is bare bones, everything else like EJB, JPA, Clustering are extensions to that. Core has a deployment manager but it does not know what to do with the uploaded archive, such as WAR, unless an extension is uploaded.
 * Rich management layer supporting configuration persistence, hot runtime updates, and unified set of tools and protocols.
 * Built-in lightweight web server (supports the HTTP/JSON management protocol)
