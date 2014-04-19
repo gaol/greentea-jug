@@ -464,6 +464,16 @@ image::undertow-benchmarks.png[1000, 567]
 
 NOTE: http://www.techempower.com/blog/2014/03/04/one-million-http-rps-without-load-balancing-is-easy/
 
+[NOTE]
+[role="speaker"]
+====
+* 半年前　google　发布了一个演说，使用　lb　实现一秒钟　１００万的请求
+* 现在我们使用　undertow　一个单台服务器就可以实现
+** 测试内容与　google　之前做得测试类似
+** 会简化架构
+* $8,000 一太主机
+* 半分钟时间触发　３　千万多次请求，　每秒钟超过１００万的请求处理能力
+====
 [.topic.source]
 == WildFly: 端口减少
 
@@ -551,6 +561,7 @@ NOTE: http://www.techempower.com/blog/2014/03/04/one-million-http-rps-without-lo
 * 发布　core　使得用户可以使用　wildfly　内核实现自己的运行时平台，　不局限在　JavaEE　领域
 ** 例如　TorqueBox 使用　WildFly　的内核实现了　Ruby-on-Railes 的平台
 *　提供了一个架构，　支持添加新的　subsystem，　新的部署类型　etc
+** wildfly　提供全面的文档，教你如何自定义化自己的　subsystem
 ** 提供了线程的管理 支持配置的持久化，　热机状态下的配置更新(还提供了一系列的管理工具和协议)
 ** 部署管理，　但是你需要自己实现具体的部署 　management，　classloading，　logging　是最基础的设施
 * Management, classloading (JBoss Modules), logging etc is bare bones, everything else like EJB, JPA, Clustering are extensions to that. Core has a deployment manager but it does not know what to do with the uploaded archive, such as WAR, unless an extension is uploaded.
